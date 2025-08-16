@@ -1,0 +1,24 @@
+:root {
+    --button-diameter: 100px;
+}
+
+button {
+  background-color: #a073a0;
+  border: none;
+  border-radius: calc(var(--button-diameter) / 2);
+
+  color: white;
+
+  width: var(--button-diameter);
+  height: var(--button-diameter);
+
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 32px;
+  cursor: pointer;
+
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+}

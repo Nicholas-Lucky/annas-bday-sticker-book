@@ -1,0 +1,12 @@
+#sidebar {
+    width: 30vw;
+    height: 100vh;
+
+    position: fixed;
+    right: -30vw;
+
+    background-color: aquamarine;
+    
+    transition: transform 1s;
+    transition-timing-function: ease;
+}
