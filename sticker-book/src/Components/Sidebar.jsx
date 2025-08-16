@@ -1,4 +1,5 @@
 import './Sidebar.css';
+import { TestRectangle } from './Stickers/TestRectangle.jsx';
 
 function Sidebar() {
   function toggleSidebar(state) {
@@ -19,6 +20,7 @@ function Sidebar() {
   return (
     <div id="sidebar">
         Hello
+        <TestRectangle />
     </div>
   );
 }

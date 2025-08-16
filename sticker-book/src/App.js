@@ -4,6 +4,17 @@ import { useEffect, useState } from 'react';
 import { Sidebar } from './Components/Sidebar.jsx';
 import { SidebarButton } from './Components/SidebarButton.jsx';
 
+function initializeLocalStorage() {
+  const cursorX = localStorage.getItem("cursorX") || "";
+  if (cursorX == "")
+    localStorage.setItem("cursorX", 0);
+
+  const cursorY = localStorage.getItem("cursorY") || "";
+  if (cursorY == "")
+    localStorage.setItem("cursorY", 0);
+}
+initializeLocalStorage();
+
 function App() {
   // const [sideBarIsOpen, setSideBarState] = useState(false);
   
@@ -15,7 +26,12 @@ function App() {
   // window.addEventListener("Sidebar Button Clicked!", toggleSidebar);
   
   return (
-    <div className="App">
+    <div className="App"
+      onPointerMove={e => {
+        localStorage.setItem("cursorX", e.clientX);
+        localStorage.setItem("cursorY", e.clientY);
+      }}
+    >
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

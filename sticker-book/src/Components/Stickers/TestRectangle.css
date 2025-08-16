@@ -1,0 +1,18 @@
+:root {
+    --width: 200px;
+}
+
+#rectangle {
+    width: var(--width);
+    height: var(--width);
+
+    position: absolute;
+    left: calc(50% - calc(var(--width) / 2));
+    margin-top: 10%;
+
+    background-color: coral;
+}
+
+#rectangle:hover {
+    cursor: pointer;
+}
