@@ -19,3 +19,13 @@
 
 [Style transform Property](https://www.w3schools.com/jsref/prop_style_transform.asp)
 
+[Element: getBoundingClientRect() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+
+[CSS cursor Property](https://www.w3schools.com/cssref/pr_class_cursor.php)
+
+[React.js Updating Objects in State](https://react.dev/learn/updating-objects-in-state)
+
+[How TO - Create a Draggable HTML Element](https://www.w3schools.com/howto/howto_js_draggable.asp)
+
+[Custom, Draggable component too slow in ReactJS when Using onMouseMove()](https://stackoverflow.com/questions/63862794/custom-draggable-component-too-slow-in-reactjs-when-using-onmousemove)
+

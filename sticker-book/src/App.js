@@ -16,6 +16,9 @@ function initializeLocalStorage() {
 initializeLocalStorage();
 
 function App() {
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
   // const [sideBarIsOpen, setSideBarState] = useState(false);
   
   // function toggleSidebar() {
@@ -30,6 +33,9 @@ function App() {
       onPointerMove={e => {
         localStorage.setItem("cursorX", e.clientX);
         localStorage.setItem("cursorY", e.clientY);
+
+        setX(e.clientX);
+        setY(e.clientY);
       }}
     >
       <header className="App-header">
@@ -45,6 +51,8 @@ function App() {
         >
           Learn React
         </a>
+        X: {x}
+        Y: {y}
         {/* {sideBarIsOpen && <Sidebar />} */}
         <Sidebar />
         <SidebarButton />
