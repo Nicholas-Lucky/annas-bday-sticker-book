@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/annas-bday-sticker-book/static/css/main.c8bcc5e3.css",
-    "main.js": "/annas-bday-sticker-book/static/js/main.e434855d.js",
+    "main.js": "/annas-bday-sticker-book/static/js/main.22ce81ad.js",
     "static/js/453.94509467.chunk.js": "/annas-bday-sticker-book/static/js/453.94509467.chunk.js",
     "static/media/logo.svg": "/annas-bday-sticker-book/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/annas-bday-sticker-book/index.html",
     "main.c8bcc5e3.css.map": "/annas-bday-sticker-book/static/css/main.c8bcc5e3.css.map",
-    "main.e434855d.js.map": "/annas-bday-sticker-book/static/js/main.e434855d.js.map",
+    "main.22ce81ad.js.map": "/annas-bday-sticker-book/static/js/main.22ce81ad.js.map",
     "453.94509467.chunk.js.map": "/annas-bday-sticker-book/static/js/453.94509467.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8bcc5e3.css",
-    "static/js/main.e434855d.js"
+    "static/js/main.22ce81ad.js"
   ]
 }
