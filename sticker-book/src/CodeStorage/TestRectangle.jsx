@@ -42,9 +42,9 @@ function TestRectangle() {
 
     return (
         <div id="rectangle"
-            onDragStart={function(){setCurrentPosition()}}
-            //onMouseUp={function(){resetPosition()}}
-            onDragEnd={e => {
+            onMouseDown={function(){setCurrentPosition()}}
+            onMouseUp={function(){resetPosition()}}
+            onMouseMove={e => { // onPointerMove also works for this I think??
                 setRah(rah + 1);
                 console.log(rah);
                 if (isClicked) {
@@ -77,7 +77,6 @@ function TestRectangle() {
                     // localStorage.setItem("centerY", centerY);
                 }
             }}
-            draggable={true}
         >
             {centerX}
             <br></br>
