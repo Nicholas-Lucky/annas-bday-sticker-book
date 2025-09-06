@@ -29,3 +29,4 @@
 
 [Custom, Draggable component too slow in ReactJS when Using onMouseMove()](https://stackoverflow.com/questions/63862794/custom-draggable-component-too-slow-in-reactjs-when-using-onmousemove)
 
+[Adding Images, Fonts, and Files to JSX](https://create-react-app.dev/docs/adding-images-fonts-and-files/)

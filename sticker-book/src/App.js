@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { Sidebar } from './Components/Sidebar.jsx';
 import { SidebarButton } from './Components/SidebarButton.jsx';
+import { PageOne } from './Components/PageOne.jsx';
 
 function initializeLocalStorage() {
   const cursorX = localStorage.getItem("cursorX") || "";
@@ -39,7 +40,8 @@ function App() {
       }}
     >
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <PageOne />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
