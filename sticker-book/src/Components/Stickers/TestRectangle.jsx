@@ -1,18 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './TestRectangle.css';
+
+/* Ideally I don't think we would need to use local storage to track if a sticker is clicked,
+ * so if we are able to find a way that works then we might switch */
+function initializeLocalStorage() {
+  const testRectangleIsClicked = localStorage.getItem("testRectangleIsClicked") || "";
+  if (testRectangleIsClicked === "")
+    localStorage.setItem("testRectangleIsClicked", "false");
+}
+initializeLocalStorage();
 
 function TestRectangle() {
     const [isClicked, setClickedState] = useState(false);
-    const [originalCenterX, setOriginalCenterX] = useState(null);
-    const [originalCenterY, setOriginalCenterY] = useState(null);
-    const [centerX, setX] = useState(0);
-    const [centerY, setY] = useState(0);
-    const [rah, setRah] = useState(1);
+    const [centerX, setX] = useState(0); // To be displayed on the sticker for testing
+    const [centerY, setY] = useState(0); // To be displayed on the sticker for testing
     
+    // When the sticker is clicked on
     function setCurrentPosition() {
-        if (!isClicked) {
-            setClickedState(true);
-            
+        console.log("Sticker clicked");
+
+        if (localStorage.getItem("testRectangleIsClicked") === "false") {
+            // setClickedState(true);
+            localStorage.setItem("testRectangleIsClicked", "true");
+
             const sticker = document.getElementById("rectangle");
             let corners = sticker.getBoundingClientRect();
             
@@ -22,62 +32,81 @@ function TestRectangle() {
             let centerX = corners.left + (width / 2);
             let centerY = corners.top + (height / 2);
             
-            setX(centerX);
-            setY(centerY);
-
             localStorage.setItem("centerX", centerX);
             localStorage.setItem("centerY", centerY);
 
-            localStorage.setItem("originalCenterX", originalCenterX);
-            localStorage.setItem("originalCenterY", originalCenterY);
+            // To be displayed on the sticker for testing
+            setX(centerX);
+            setY(centerY);
+
+            let differenceX = localStorage.getItem("cursorX") - centerX;
+            let differenceY = localStorage.getItem("cursorY") - centerY;
+
+            // Initialize the cursor offset so we can move a sticker from anywhere on the sticker 
+            let cursorOffsetX = localStorage.getItem("cursorOffsetX") || "";
+            if (cursorOffsetX === "") {
+                localStorage.setItem("cursorOffsetX", differenceX);
+            }
+
+            let cursorOffsetY = localStorage.getItem("cursorOffsetY") || "";
+            if (cursorOffsetY === "") {
+                localStorage.setItem("cursorOffsetY", differenceY);
+            }
         }
     }
 
+    // When the sticker was clicked and is now no longer clicked
     function resetPosition() {
-        setClickedState(false);
+        // setClickedState(false);
+        localStorage.setItem("testRectangleIsClicked", "false");
 
+        // Reset the sticker position
         const sticker = document.getElementById("rectangle");
         sticker.style.transform = `translateX(${0}px) translateY(${0}px)`;
+
+        // Reset the cursor offset
+        localStorage.setItem("cursorOffsetX", "");
+        localStorage.setItem("cursorOffsetY", "");
     }
 
+    // When the sticker is clicked and the mouse is moving it
+    function moveSticker() {
+        if (localStorage.getItem("testRectangleIsClicked") === "true") {
+            const sticker = document.getElementById("rectangle");
+
+            let differenceX = localStorage.getItem("cursorX") - localStorage.getItem("centerX") - localStorage.getItem("cursorOffsetX");
+            let differenceY = localStorage.getItem("cursorY") - localStorage.getItem("centerY") - localStorage.getItem("cursorOffsetY");
+
+            sticker.style.transform = `translateX(${differenceX}px) translateY(${differenceY}px)`;
+
+            let corners = sticker.getBoundingClientRect();
+            let width = corners.right - corners.left;
+            let height = corners.bottom - corners.top;
+
+            let centerX = corners.left + (width / 2);
+            let centerY = corners.top + (height / 2);
+
+            setX(centerX);
+            setY(centerY);
+        }
+    }
+
+    // Listen for when the mouse is moving on the website in general (not just in the sticker)
+    useEffect(() => {
+        window.addEventListener("Mouse is moving!", function(){ moveSticker(); });
+
+        // Not sure if this is needed, but preciousorigho.com says this might help with performance?
+        return () => {
+            window.removeEventListener("Mouse is moving!", function(){ moveSticker(); });
+        };
+    }, [isClicked]);
+
+    // console.log("rendered");
+    // console.log("isClicked is" + isClicked);
+
     return (
-        <div id="rectangle"
-            onMouseDown={function(){setCurrentPosition()}}
-            onMouseUp={function(){resetPosition()}}
-            onMouseMove={e => { // onPointerMove also works for this I think??
-                setRah(rah + 1);
-                console.log(rah);
-                if (isClicked) {
-                    const sticker = document.getElementById("rectangle");
-
-                    let differenceX = e.clientX - localStorage.getItem("centerX");
-                    let differenceY = e.clientY - localStorage.getItem("centerY");
-
-                    sticker.style.transform = `translateX(${differenceX}px) translateY(${differenceY}px)`;
-
-                    let corners = sticker.getBoundingClientRect();
-                    let width = corners.right - corners.left;
-                    let height = corners.bottom - corners.top;
-
-                    let centerX = corners.left + (width / 2);
-                    let centerY = corners.top + (height / 2);
-
-                    // let differenceX = x - localStorage.getItem("startX");
-                    // let differenceY = y - localStorage.getItem("startY");
-                    // console.log(`${differenceX}, ${differenceY}`);
-                    // sticker.style.transform = `translateX(${differenceX}px) translateY(${differenceY}px)`;
-
-                    // sticker.style.top = (sticker.offsetTop - differenceY) + "px";
-                    // sticker.style.left = (sticker.offsetLeft - differenceX) + "px";
-
-                    setX(centerX);
-                    setY(centerY);
-
-                    // localStorage.setItem("centerX", centerX);
-                    // localStorage.setItem("centerY", centerY);
-                }
-            }}
-        >
+        <div id="rectangle" onMouseDown={function(){setCurrentPosition()}} onMouseUp={function(){resetPosition()}}>
+            {/* for testing and debugging */}
             {centerX}
             <br></br>
             {centerY}

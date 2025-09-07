@@ -19,19 +19,11 @@ initializeLocalStorage();
 function App() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
-
-  // const [sideBarIsOpen, setSideBarState] = useState(false);
-  
-  // function toggleSidebar() {
-  //   setSideBarState(!sideBarIsOpen);
-  //   console.log(`sideBarIsOpen set to ${sideBarIsOpen}`);
-  // }
-
-  // window.addEventListener("Sidebar Button Clicked!", toggleSidebar);
   
   return (
     <div className="App"
       onPointerMove={e => {
+        window.dispatchEvent(new Event("Mouse is moving!"));
         localStorage.setItem("cursorX", e.clientX);
         localStorage.setItem("cursorY", e.clientY);
 

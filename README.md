@@ -30,3 +30,10 @@
 [Custom, Draggable component too slow in ReactJS when Using onMouseMove()](https://stackoverflow.com/questions/63862794/custom-draggable-component-too-slow-in-reactjs-when-using-onmousemove)
 
 [Adding Images, Fonts, and Files to JSX](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
+
+[Drag'n'Drop with mouse events](https://javascript.info/mouse-drag-and-drop)
+
+[Is your React useState hook not updating state immediately? Here's how to fix it](https://www.frontendundefined.com/posts/react-issues/react-usestate-hook-not-updating-immediately/)
+
+[A better way to create event listeners in React](https://www.preciousorigho.com/articles/a-better-way-to-create-event-listeners-in-react)
+
