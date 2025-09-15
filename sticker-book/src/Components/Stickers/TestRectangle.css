@@ -14,5 +14,9 @@
 }
 
 #rectangle:hover {
-    cursor: pointer;
+    cursor: grab;
+}
+
+#rectangle:active {
+    cursor: grabbing;
 }

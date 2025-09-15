@@ -37,3 +37,10 @@
 
 [A better way to create event listeners in React](https://www.preciousorigho.com/articles/a-better-way-to-create-event-listeners-in-react)
 
+[CSS :active Pseudo-class](https://www.w3schools.com/cssref/sel_active.php)
+
+[CSS /JS to prevent dragging of ghost image?](https://stackoverflow.com/questions/7439042/css-js-to-prevent-dragging-of-ghost-image)
+
+[HTML DOM Element getAttribute()](https://www.w3schools.com/jsref/met_element_getattribute.asp)
+
+[CSS Clip-Path Generator](https://www.cssportal.com/css-clip-path-generator/)

@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
-import './TestRectangle.css';
+import './ShadowSnorlax.css';
+import snorlax from './ShadowSnorlax.png'
 
 /* Ideally I don't think we would need to use local storage to track if a sticker is clicked,
  * so if we are able to find a way that works then we might switch */
 function initializeLocalStorage() {
-  const testRectangleIsClicked = localStorage.getItem("testRectangleIsClicked") || "";
-  if (testRectangleIsClicked === "")
-    localStorage.setItem("testRectangleIsClicked", "false");
+  const shadowSnorlaxIsClicked = localStorage.getItem("shadowSnorlaxIsClicked") || "";
+  if (shadowSnorlaxIsClicked === "")
+    localStorage.setItem("shadowSnorlaxIsClicked", "false");
 }
 initializeLocalStorage();
 
-function TestRectangle() {
+function ShadowSnorlax() {
     const [isClicked, setClickedState] = useState(false);
     const [centerX, setX] = useState(0); // To be displayed on the sticker for testing
     const [centerY, setY] = useState(0); // To be displayed on the sticker for testing
@@ -19,11 +20,14 @@ function TestRectangle() {
     function setCurrentPosition() {
         console.log("Sticker clicked");
 
-        if (localStorage.getItem("testRectangleIsClicked") === "false") {
+        if (localStorage.getItem("shadowSnorlaxIsClicked") === "false") {
             // setClickedState(true);
-            localStorage.setItem("testRectangleIsClicked", "true");
+            localStorage.setItem("shadowSnorlaxIsClicked", "true");
 
-            const sticker = document.getElementById("rectangle");
+            const sticker = document.getElementById("snorlax");
+            // if (sticker.getAttribute("draggable") != false)
+            //     sticker.setAttribute("draggable", false);
+
             let corners = sticker.getBoundingClientRect();
             
             let width = corners.right - corners.left;
@@ -32,8 +36,8 @@ function TestRectangle() {
             let centerX = corners.left + (width / 2);
             let centerY = corners.top + (height / 2);
             
-            localStorage.setItem("testRectangleCenterX", centerX);
-            localStorage.setItem("testRectangleCenterY", centerY);
+            localStorage.setItem("centerX", centerX);
+            localStorage.setItem("centerY", centerY);
 
             // To be displayed on the sticker for testing
             setX(centerX);
@@ -58,10 +62,10 @@ function TestRectangle() {
     // When the sticker was clicked and is now no longer clicked
     function resetPosition() {
         // setClickedState(false);
-        localStorage.setItem("testRectangleIsClicked", "false");
+        localStorage.setItem("shadowSnorlaxIsClicked", "false");
 
         // Reset the sticker position
-        const sticker = document.getElementById("rectangle");
+        const sticker = document.getElementById("snorlax");
         sticker.style.transform = `translateX(${0}px) translateY(${0}px)`;
 
         // Reset the cursor offset
@@ -71,11 +75,11 @@ function TestRectangle() {
 
     // When the sticker is clicked and the mouse is moving it
     function moveSticker() {
-        if (localStorage.getItem("testRectangleIsClicked") === "true") {
-            const sticker = document.getElementById("rectangle");
+        if (localStorage.getItem("shadowSnorlaxIsClicked") === "true") {
+            const sticker = document.getElementById("snorlax");
 
-            let differenceX = localStorage.getItem("cursorX") - localStorage.getItem("testRectangleCenterX") - localStorage.getItem("cursorOffsetX");
-            let differenceY = localStorage.getItem("cursorY") - localStorage.getItem("testRectangleCenterY") - localStorage.getItem("cursorOffsetY");
+            let differenceX = localStorage.getItem("cursorX") - localStorage.getItem("centerX") - localStorage.getItem("cursorOffsetX");
+            let differenceY = localStorage.getItem("cursorY") - localStorage.getItem("centerY") - localStorage.getItem("cursorOffsetY");
 
             sticker.style.transform = `translateX(${differenceX}px) translateY(${differenceY}px)`;
 
@@ -93,6 +97,7 @@ function TestRectangle() {
 
     // Listen for when the mouse is moving on the website in general (not just in the sticker)
     useEffect(() => {
+        // document.getElementById("snorlax").setAttribute("draggable", false);
         window.addEventListener("Mouse is moving!", function(){ moveSticker(); });
 
         // Not sure if this is needed, but preciousorigho.com says this might help with performance?
@@ -105,13 +110,17 @@ function TestRectangle() {
     // console.log("isClicked is" + isClicked);
 
     return (
-        <div id="rectangle" onMouseDown={function(){setCurrentPosition()}} onMouseUp={function(){resetPosition()}}>
-            {/* for testing and debugging */}
-            {centerX}
-            <br></br>
-            {centerY}
+        // <div id="snorlax" onMouseDown={function(){setCurrentPosition()}} onMouseUp={function(){resetPosition()}}>
+        //     {/* for testing and debugging */}
+        //     {centerX}
+        //     <br></br>
+        //     {centerY}
+        // </div>
+
+        <div>
+            <img src={snorlax} id="snorlax" onMouseDown={function(){setCurrentPosition()}} onMouseUp={function(){resetPosition()}} draggable={false}></img>
         </div>
     );
 }
 
-export { TestRectangle };
+export { ShadowSnorlax };

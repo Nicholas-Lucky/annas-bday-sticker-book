@@ -1,5 +1,6 @@
 import './Sidebar.css';
 import { TestRectangle } from './Stickers/TestRectangle.jsx';
+import { ShadowSnorlax } from './Stickers/ShadowSnorlax.jsx';
 
 function Sidebar() {
   function toggleSidebar(state) {
@@ -21,6 +22,7 @@ function Sidebar() {
     <div id="sidebar">
         Hello
         <TestRectangle />
+        <ShadowSnorlax />
     </div>
   );
 }
