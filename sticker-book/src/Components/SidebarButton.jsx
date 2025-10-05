@@ -15,7 +15,7 @@ function SidebarButton() {
 
     return (
         <div id="sidebar-button">
-            <button onClick={buttonClicked}>| | |</button>
+            <button onClick={buttonClicked}>👀</button>
         </div>
     );
 }

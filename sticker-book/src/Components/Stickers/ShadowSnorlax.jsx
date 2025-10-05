@@ -18,6 +18,9 @@ function ShadowSnorlax() {
     
     // When the sticker is clicked on
     function setCurrentPosition() {
+        // for debugging; remove if we're not using this
+        localStorage.setItem("shadowSnorlaxPlaced", "false");
+
         console.log("Sticker clicked");
 
         if (localStorage.getItem("shadowSnorlaxIsClicked") === "false") {
@@ -36,8 +39,10 @@ function ShadowSnorlax() {
             let centerX = corners.left + (width / 2);
             let centerY = corners.top + (height / 2);
             
-            localStorage.setItem("centerX", centerX);
-            localStorage.setItem("centerY", centerY);
+            localStorage.setItem("shadowSnorlaxCenterX", centerX);
+            localStorage.setItem("shadowSnorlaxCenterY", centerY);
+            localStorage.setItem("shadowSnorlaxCenterXCurrent", centerX);
+            localStorage.setItem("shadowSnorlaxCenterYCurrent", centerY);
 
             // To be displayed on the sticker for testing
             setX(centerX);
@@ -61,6 +66,8 @@ function ShadowSnorlax() {
 
     // When the sticker was clicked and is now no longer clicked
     function resetPosition() {
+        window.dispatchEvent(new Event("Shadow Snorlax Placed!"));
+
         // setClickedState(false);
         localStorage.setItem("shadowSnorlaxIsClicked", "false");
 
@@ -78,8 +85,8 @@ function ShadowSnorlax() {
         if (localStorage.getItem("shadowSnorlaxIsClicked") === "true") {
             const sticker = document.getElementById("snorlax");
 
-            let differenceX = localStorage.getItem("cursorX") - localStorage.getItem("centerX") - localStorage.getItem("cursorOffsetX");
-            let differenceY = localStorage.getItem("cursorY") - localStorage.getItem("centerY") - localStorage.getItem("cursorOffsetY");
+            let differenceX = localStorage.getItem("cursorX") - localStorage.getItem("shadowSnorlaxCenterX") - localStorage.getItem("cursorOffsetX");
+            let differenceY = localStorage.getItem("cursorY") - localStorage.getItem("shadowSnorlaxCenterY") - localStorage.getItem("cursorOffsetY");
 
             sticker.style.transform = `translateX(${differenceX}px) translateY(${differenceY}px)`;
 
@@ -92,6 +99,9 @@ function ShadowSnorlax() {
 
             setX(centerX);
             setY(centerY);
+
+            localStorage.setItem("shadowSnorlaxCenterXCurrent", centerX);
+            localStorage.setItem("shadowSnorlaxCenterYCurrent", centerY);
         }
     }
 

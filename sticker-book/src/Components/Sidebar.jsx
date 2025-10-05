@@ -20,9 +20,8 @@ function Sidebar() {
 
   return (
     <div id="sidebar">
-        Hello
-        <TestRectangle />
-        <ShadowSnorlax />
+        {/* <TestRectangle /> */}
+        {localStorage.getItem("shadowSnorlaxPlaced") == "false" && <ShadowSnorlax />}
     </div>
   );
 }

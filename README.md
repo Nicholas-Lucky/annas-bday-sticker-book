@@ -44,3 +44,9 @@
 [HTML DOM Element getAttribute()](https://www.w3schools.com/jsref/met_element_getattribute.asp)
 
 [CSS Clip-Path Generator](https://www.cssportal.com/css-clip-path-generator/)
+
+[Making a div Vertically Scrollable using CSS](https://www.geeksforgeeks.org/css/making-a-div-vertically-scrollable-using-css/)
+
+[CSS The overflow Property](https://www.w3schools.com/css/css_overflow.asp)
+
+[Remove the background from your image for free.](https://www.adobe.com/express/feature/image/remove-background)

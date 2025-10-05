@@ -5,8 +5,11 @@
     position: fixed;
     right: -30vw;
 
-    background-color: aquamarine;
+    background-color: #d49fd6;
     
     transition: transform 1s;
     transition-timing-function: ease;
+    /* issue is sticker goes behind */
+    /* overflow-y: auto; */
+    /* overflow-x: visible; */
 }

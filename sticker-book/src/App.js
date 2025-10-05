@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { Sidebar } from './Components/Sidebar.jsx';
 import { SidebarButton } from './Components/SidebarButton.jsx';
 import { PageOne } from './Components/PageOne.jsx';
@@ -13,12 +13,21 @@ function initializeLocalStorage() {
   const cursorY = localStorage.getItem("cursorY") || "";
   if (cursorY == "")
     localStorage.setItem("cursorY", 0);
+
+  const shadowSnorlaxPlaced = localStorage.getItem("shadowSnorlaxPlaced") || "";
+  if (shadowSnorlaxPlaced == "")
+    localStorage.setItem("shadowSnorlaxPlaced", "false");
 }
 initializeLocalStorage();
 
 function App() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+  const [aura, setAura] = useState(0);
+
+  function rerender() {
+    setAura(aura + 1);
+  }
   
   return (
     <div className="App"
@@ -30,23 +39,15 @@ function App() {
         setX(e.clientX);
         setY(e.clientY);
       }}
+      onMouseUp={function(){rerender()}}
     >
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <PageOne />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        X: {x}
-        Y: {y}
+
+        {/* X: {x}
+        Y: {y} */}
+        Shadow Snorlax Placed?!?!?!? (DEBUG POV?!?!?!): {localStorage.getItem("shadowSnorlaxPlaced")}
         {/* {sideBarIsOpen && <Sidebar />} */}
         <Sidebar />
         <SidebarButton />
