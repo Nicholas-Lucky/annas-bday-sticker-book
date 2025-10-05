@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/annas-bday-sticker-book/static/css/main.9aa23885.css",
-    "main.js": "/annas-bday-sticker-book/static/js/main.600affde.js",
+    "main.css": "/annas-bday-sticker-book/static/css/main.79ee6540.css",
+    "main.js": "/annas-bday-sticker-book/static/js/main.c68a40d8.js",
     "static/js/453.94509467.chunk.js": "/annas-bday-sticker-book/static/js/453.94509467.chunk.js",
     "static/media/Sticker-Book-Pages.png": "/annas-bday-sticker-book/static/media/Sticker-Book-Pages.9494da0fd101310bd934.png",
+    "static/media/ShadowSnorlaxPlaced.png": "/annas-bday-sticker-book/static/media/ShadowSnorlaxPlaced.f27f6e4851c87080aad8.png",
     "static/media/ShadowSnorlax.png": "/annas-bday-sticker-book/static/media/ShadowSnorlax.2146f8aadf5f9083203d.png",
+    "static/media/ShadowSnorlaxPlaceholder.png": "/annas-bday-sticker-book/static/media/ShadowSnorlaxPlaceholder.e25620d7eaab86c30a2d.png",
     "static/media/logo.svg": "/annas-bday-sticker-book/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/annas-bday-sticker-book/index.html",
-    "main.9aa23885.css.map": "/annas-bday-sticker-book/static/css/main.9aa23885.css.map",
-    "main.600affde.js.map": "/annas-bday-sticker-book/static/js/main.600affde.js.map",
+    "main.79ee6540.css.map": "/annas-bday-sticker-book/static/css/main.79ee6540.css.map",
+    "main.c68a40d8.js.map": "/annas-bday-sticker-book/static/js/main.c68a40d8.js.map",
     "453.94509467.chunk.js.map": "/annas-bday-sticker-book/static/js/453.94509467.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9aa23885.css",
-    "static/js/main.600affde.js"
+    "static/css/main.79ee6540.css",
+    "static/js/main.c68a40d8.js"
   ]
 }
