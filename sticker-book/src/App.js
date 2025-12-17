@@ -24,6 +24,10 @@ function App() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [aura, setAura] = useState(0);
+  const [stickerNames, setStickerNames] = useState({
+    testRectangle: "testRectangle",
+    shadowSnorlax: "shadowSnorlax"
+  });
 
   function rerender() {
     setAura(aura + 1);

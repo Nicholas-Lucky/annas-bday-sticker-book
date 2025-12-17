@@ -1,6 +1,8 @@
 import './Sidebar.css';
 import { TestRectangle } from './Stickers/TestRectangle.jsx';
 import { ShadowSnorlax } from './Stickers/ShadowSnorlax.jsx';
+import { Sticker } from './Stickers/Sticker.jsx';
+import snorlax from './Stickers/ShadowSnorlax.png';
 
 function Sidebar() {
   function toggleSidebar(state) {
@@ -20,8 +22,9 @@ function Sidebar() {
 
   return (
     <div id="sidebar">
-        {/* <TestRectangle /> */}
+        <TestRectangle />
         {localStorage.getItem("shadowSnorlaxPlaced") == "false" && <ShadowSnorlax />}
+        <Sticker name="testSnorlax" imagePath={snorlax}/>
     </div>
   );
 }

@@ -50,3 +50,5 @@
 [CSS The overflow Property](https://www.w3schools.com/css/css_overflow.asp)
 
 [Remove the background from your image for free.](https://www.adobe.com/express/feature/image/remove-background)
+
+[React Component Alternatives](https://react.dev/reference/react/Component#alternatives)

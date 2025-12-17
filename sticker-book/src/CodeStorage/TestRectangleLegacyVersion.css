@@ -1,0 +1,22 @@
+:root {
+    --test-rectangle-width: 200px;
+}
+
+#rectangle {
+    width: var(--test-rectangle-width);
+    height: var(--test-rectangle-width);
+
+    position: relative;
+    left: calc(50% - calc(var(--test-rectangle-width) / 2));
+    margin-top: 10%;
+
+    background-color: coral;
+}
+
+#rectangle:hover {
+    cursor: grab;
+}
+
+#rectangle:active {
+    cursor: grabbing;
+}
