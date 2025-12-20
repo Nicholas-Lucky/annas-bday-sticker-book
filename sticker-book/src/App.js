@@ -1,36 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
 import { use, useEffect, useState } from 'react';
 import { Sidebar } from './Components/Sidebar.jsx';
 import { SidebarButton } from './Components/SidebarButton.jsx';
 import { PageOne } from './Components/PageOne.jsx';
 
-function initializeLocalStorage() {
-  const cursorX = localStorage.getItem("cursorX") || "";
-  if (cursorX == "")
-    localStorage.setItem("cursorX", 0);
-
-  const cursorY = localStorage.getItem("cursorY") || "";
-  if (cursorY == "")
-    localStorage.setItem("cursorY", 0);
-
-  const shadowSnorlaxPlaced = localStorage.getItem("shadowSnorlaxPlaced") || "";
-  if (shadowSnorlaxPlaced == "")
-    localStorage.setItem("shadowSnorlaxPlaced", "false");
-}
-initializeLocalStorage();
-
 function App() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
-  const [aura, setAura] = useState(0);
+  const [reRenders, setReRenderCount] = useState(0);
+
+  // This will be used to supply the files with the sticker names; also can be used for local storage keys for each sticker
   const [stickerNames, setStickerNames] = useState({
     testRectangle: "testRectangle",
     shadowSnorlax: "shadowSnorlax"
   });
 
-  function rerender() {
-    setAura(aura + 1);
+  function initializeLocalStorage() {
+    // cursorX tracks the x-value of the cursor
+    const cursorX = localStorage.getItem("cursorX") || "";
+    if (cursorX == "")
+      localStorage.setItem("cursorX", 0);
+
+    // cursorY tracks the y-value of the cursor
+    const cursorY = localStorage.getItem("cursorY") || "";
+    if (cursorY == "")
+      localStorage.setItem("cursorY", 0);
+
+    // Make a key for each sticker to track if they have been placed in the sticker book
+    for (const sticker in stickerNames) {
+      let stickerPlacedKey = stickerNames[sticker] + "Placed";
+      const key = localStorage.getItem(stickerPlacedKey) || "";
+      if (key == "") {
+        localStorage.setItem(stickerPlacedKey, "false");
+      }
+    }
+  }
+  initializeLocalStorage();
+
+  function reRenderWebsite() {
+    console.log("Website re-rendered");
+    setReRenderCount(reRenders + 1);
   }
   
   return (
@@ -43,17 +52,16 @@ function App() {
         setX(e.clientX);
         setY(e.clientY);
       }}
-      onMouseUp={function(){rerender()}}
+      onMouseUp={function(){reRenderWebsite()}}
     >
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <PageOne />
 
         {/* X: {x}
         Y: {y} */}
         Shadow Snorlax Placed?!?!?!? (DEBUG POV?!?!?!): {localStorage.getItem("shadowSnorlaxPlaced")}
-        {/* {sideBarIsOpen && <Sidebar />} */}
-        <Sidebar />
+
+        <Sidebar stickerNames={stickerNames} />
         <SidebarButton />
       </header>
     </div>

@@ -16,9 +16,9 @@ function ShadowSnorlaxPlaceholder() {
         let y_min = corners.top + (height / 5);
         let y_max = corners.bottom - (height / 5);
 
-        let confirm_x = (localStorage.getItem("shadowSnorlaxCenterXCurrent") >= x_min) && (localStorage.getItem("cursorX") <= x_max);
-        let confirm_y = (localStorage.getItem("shadowSnorlaxCenterYCurrent") >= y_min) && (localStorage.getItem("cursorY") <= y_max);
-
+        let confirm_x = (localStorage.getItem("shadowSnorlaxCenterXCurrent") >= x_min) && (localStorage.getItem("shadowSnorlaxCenterXCurrent") <= x_max);
+        let confirm_y = (localStorage.getItem("shadowSnorlaxCenterYCurrent") >= y_min) && (localStorage.getItem("shadowSnorlaxCenterYCurrent") <= y_max);
+        console.log(`x_min: ${confirm_x && confirm_y}`)
         if (confirm_x && confirm_y) {
             window.dispatchEvent(new Event("Shadow Snorlax Placement Confirmed!"));
             localStorage.setItem("shadowSnorlaxPlaced", "true");
@@ -28,11 +28,11 @@ function ShadowSnorlaxPlaceholder() {
     }
 
     useEffect(() => {
-        window.addEventListener("Shadow Snorlax Placed!", function(){ confirmSticker(); });
+        window.addEventListener("shadowSnorlax Placed!", function(){ confirmSticker(); });
         
         // Not sure if this is needed, but preciousorigho.com says this might help with performance?
         return () => {
-            window.removeEventListener("Shadow Snorlax Placed!", function(){ confirmSticker(); });
+            window.removeEventListener("shadowSnorlax Placed!", function(){ confirmSticker(); });
         };
     }, []);
 

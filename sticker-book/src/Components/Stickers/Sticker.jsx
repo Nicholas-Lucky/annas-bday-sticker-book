@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Sticker({name, imagePath}) {
+function Sticker({ name, imagePath }) {
     const [isClicked, setClickedState] = useState(false);
     const [centerX, setX] = useState(0); // To be displayed on the sticker for testing
     const [centerY, setY] = useState(0); // To be displayed on the sticker for testing
@@ -37,6 +37,8 @@ function Sticker({name, imagePath}) {
             
             localStorage.setItem(localStorageKeyForStickerCenterX, centerX);
             localStorage.setItem(localStorageKeyForStickerCenterY, centerY);
+            localStorage.setItem(localStorageKeyForStickerCenterX + "Current", centerX);
+            localStorage.setItem(localStorageKeyForStickerCenterY + "Current", centerY);
 
             // To be displayed on the sticker for testing
             setX(centerX);
@@ -60,6 +62,8 @@ function Sticker({name, imagePath}) {
 
     // When the sticker was clicked and is now no longer clicked
     function resetPosition() {
+        window.dispatchEvent(new Event(`${name} Placed!`));
+
         // setClickedState(false);
         localStorage.setItem(localStorageKeyForStickerClickState, "false");
 
@@ -91,6 +95,9 @@ function Sticker({name, imagePath}) {
 
             setX(centerX);
             setY(centerY);
+
+            localStorage.setItem(localStorageKeyForStickerCenterX + "Current", centerX);
+            localStorage.setItem(localStorageKeyForStickerCenterY + "Current", centerY);
         }
     }
 
