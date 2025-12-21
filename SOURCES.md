@@ -75,3 +75,10 @@
 
 [Local Storage: clear() method](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear)
 
+[CSS position](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position)
+
+[CSS Identifying the Containing Block](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block)
+
+[Responsive Web Design - The Viewport](https://www.w3schools.com/css/css_rwd_viewport.asp)
+
+[Is there a way to make a DIV unselectable?](https://stackoverflow.com/questions/924916/is-there-a-way-to-make-a-div-unselectable)
