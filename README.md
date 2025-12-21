@@ -52,3 +52,28 @@
 [Remove the background from your image for free.](https://www.adobe.com/express/feature/image/remove-background)
 
 [React Component Alternatives](https://react.dev/reference/react/Component#alternatives)
+
+[JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+
+[JavaScript Objects](https://www.w3schools.com/Js/js_objects.asp?ref=hackernoon.com)
+
+[JavaScript Object Properties](https://www.w3schools.com/Js/js_object_properties.asp)
+
+[Iterating through a JavaScript Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+
+[JavaScript Array map()](https://www.w3schools.com/jsref/jsref_map.asp)
+
+[JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)
+
+[GitHub Changing a commit message](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message)
+
+[React.js Keeping list items in order with key](https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key)
+
+[CSS Lists Styling](https://www.w3schools.com/css/css_list.asp)
+
+[Looping through localStorage in HTML5 and JavaScript](https://stackoverflow.com/questions/3138564/looping-through-localstorage-in-html5-and-javascript)
+
+[Local Storage: removeItem() method](https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem)
+
+[Local Storage: clear() method](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear)
+
