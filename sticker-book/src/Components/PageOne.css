@@ -1,3 +1,13 @@
+#pages-div {
+    /* Let other elements position around the pages, but give
+       the pages-div a position property so the stickers in it
+       will see it as the closest ancestor (since they currently
+       have position: absolute) and position themselves relative
+       to pages-div instead of the overall window/viewport */
+    position: relative;
+    user-select: none;
+}
+
 #book-pages {
     width: 1000px;
 }

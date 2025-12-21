@@ -18,7 +18,7 @@ function ShadowSnorlaxPlaceholder() {
 
         let confirm_x = (localStorage.getItem("shadowSnorlaxCenterXCurrent") >= x_min) && (localStorage.getItem("shadowSnorlaxCenterXCurrent") <= x_max);
         let confirm_y = (localStorage.getItem("shadowSnorlaxCenterYCurrent") >= y_min) && (localStorage.getItem("shadowSnorlaxCenterYCurrent") <= y_max);
-        console.log(`x_min: ${confirm_x && confirm_y}`)
+        
         if (confirm_x && confirm_y) {
             window.dispatchEvent(new Event("Shadow Snorlax Placement Confirmed!"));
             localStorage.setItem("shadowSnorlaxPlaced", "true");

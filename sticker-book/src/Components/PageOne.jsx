@@ -5,12 +5,12 @@ import { ShadowSnorlaxPlaced } from './Stickers/PlacedStickers/ShadowSnorlaxPlac
 
 function PageOne() {
   return (
-    <div>
-        <img src={pages} id="book-pages"></img>
+    <div id="pages-div">
+        <img src={pages} id="book-pages" draggable={false} />
         {localStorage.getItem("shadowSnorlaxPlaced") == "false" ? (
-          <ShadowSnorlaxPlaceholder />
+          <ShadowSnorlaxPlaceholder draggable={false} />
         ) : (
-          <ShadowSnorlaxPlaced />
+          <ShadowSnorlaxPlaced draggable={false}/>
         )}
     </div>
   );

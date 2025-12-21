@@ -12,6 +12,8 @@
     /* issue is sticker goes behind */
     /* overflow-y: auto; */
     /* overflow-x: visible; */
+
+    user-select: none;
 }
 
 li {
