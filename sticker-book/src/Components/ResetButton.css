@@ -2,7 +2,7 @@
     --button-diameter: 100px;
 }
 
-#sidebar-button {
+#reset-button {
   background-color: #a073a0;
   border: none;
   border-radius: calc(var(--button-diameter) / 2);
@@ -19,6 +19,6 @@
   cursor: pointer;
 
   position: fixed;
-  right: 25px;
+  left: 25px;
   bottom: 25px;
 }

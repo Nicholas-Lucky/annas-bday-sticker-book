@@ -2,6 +2,7 @@ import './App.css';
 import { use, useEffect, useState } from 'react';
 import { Sidebar } from './Components/Sidebar.jsx';
 import { SidebarButton } from './Components/SidebarButton.jsx';
+import { ResetButton } from './Components/ResetButton.jsx';
 import { PageOne } from './Components/PageOne.jsx';
 
 function App() {
@@ -42,6 +43,15 @@ function App() {
     setReRenderCount(reRenders + 1);
   }
   
+  useEffect(() => {
+    window.addEventListener("Local Storage Cleared!", function(){ reRenderWebsite(); });
+    
+    // Not sure if this is needed, but preciousorigho.com says this might help with performance?
+    return () => {
+        window.removeEventListener("Local Storage Cleared!", function(){ reRenderWebsite(); });
+    };
+  }, []);
+
   return (
     <div className="App"
       onPointerMove={e => {
@@ -52,7 +62,7 @@ function App() {
         setX(e.clientX);
         setY(e.clientY);
       }}
-      onMouseUp={function(){reRenderWebsite()}}
+      onMouseUp={function(){ reRenderWebsite(); }}
     >
       <header className="App-header">
         <PageOne />
@@ -63,6 +73,8 @@ function App() {
 
         <Sidebar stickerNames={stickerNames} />
         <SidebarButton />
+        
+        <ResetButton />
       </header>
     </div>
   );
