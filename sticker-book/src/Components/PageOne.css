@@ -11,3 +11,41 @@
 #book-pages {
     width: 1000px;
 }
+
+#shadowSnorlaxSpoilerBlocker {
+    width: 129px;
+    height: 129px;
+    border-radius: 20px;
+
+    background-color: #7b7c84;
+
+    position: absolute;
+    bottom: 11.5%;
+    left: 20%;
+
+    transition: 0.1s linear;
+
+    cursor: url("./StickerPresents/SpoilerBlockCursor32x32.png"), auto;
+}
+
+#shadowSnorlaxSpoilerBlocker:hover {
+    background-color: #9b9ca3;
+}
+
+#shadowSnorlaxPresentUnopened {
+    width: 140px;
+    
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+
+    cursor: url("./StickerPresents/UnopenedPresentCursor32x32.png"), auto;
+}
+
+#shadowSnorlaxPresentOpened {
+    width: 110px;
+    
+    position: absolute;
+    bottom: 12.9%;
+    left: 21%;
+}

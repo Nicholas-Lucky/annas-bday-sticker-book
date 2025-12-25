@@ -27,13 +27,28 @@ function App() {
     if (cursorY == "")
       localStorage.setItem("cursorY", 0);
 
-    // Make a key for each sticker to track if they have been placed in the sticker book
     for (const sticker in stickerNames) {
+      // Make a key for each sticker to track if they have been placed in the sticker book
       let stickerPlacedKey = stickerNames[sticker] + "Placed";
-      const key = localStorage.getItem(stickerPlacedKey) || "";
+      let key = localStorage.getItem(stickerPlacedKey) || "";
       if (key == "") {
         localStorage.setItem(stickerPlacedKey, "false");
       }
+
+      // Make a key for each sticker to track if their present has been opened
+      let stickerPresentOpenedKey = stickerNames[sticker] + "PresentIsOpened";
+      key = localStorage.getItem(stickerPresentOpenedKey) || "";
+      if (key == "") {
+        localStorage.setItem(stickerPresentOpenedKey, "false");
+      }
+
+      // Not used at the moment
+      // Make a key for each sticker to track if their spoiler block for their gifts are closed
+      // let stickerSpoilerBlockClosedKey = stickerNames[sticker] + "PresentSpoilerBlockIsClosed";
+      // key = localStorage.getItem(stickerSpoilerBlockClosedKey) || "";
+      // if (key == "") {
+      //   localStorage.setItem(stickerSpoilerBlockClosedKey, "false");
+      // }
     }
   }
   initializeLocalStorage();
@@ -45,10 +60,14 @@ function App() {
   
   useEffect(() => {
     window.addEventListener("Local Storage Cleared!", function(){ reRenderWebsite(); });
+    window.addEventListener("Shadow Snorlax Present Opened!", function(){ reRenderWebsite(); });
+    window.addEventListener("Shadow Snorlax Present Spoiler Closed!", function(){ reRenderWebsite(); });
     
     // Not sure if this is needed, but preciousorigho.com says this might help with performance?
     return () => {
-        window.removeEventListener("Local Storage Cleared!", function(){ reRenderWebsite(); });
+      window.removeEventListener("Local Storage Cleared!", function(){ reRenderWebsite(); });
+      window.removeEventListener("Shadow Snorlax Present Opened!", function(){ reRenderWebsite(); });
+      window.removeEventListener("Shadow Snorlax Present Spoiler Closed!", function(){ reRenderWebsite(); });
     };
   }, []);
 

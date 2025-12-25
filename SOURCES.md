@@ -82,3 +82,18 @@
 [Responsive Web Design - The Viewport](https://www.w3schools.com/css/css_rwd_viewport.asp)
 
 [Is there a way to make a DIV unselectable?](https://stackoverflow.com/questions/924916/is-there-a-way-to-make-a-div-unselectable)
+
+[Using external images for CSS custom cursors](https://stackoverflow.com/questions/18551277/using-external-images-for-css-custom-cursors)
+
+[So how big is the mouse pointer?](https://ux.stackexchange.com/questions/11259/so-how-big-is-the-mouse-pointer)
+
+[Image Resizer](https://studio.creativefabrica.com/labs/image-resizer)
+
+[HTML DOM Element setAttribute()](https://www.w3schools.com/jsref/met_element_setattribute.asp)
+
+[HTML DOM Element removeAttribute() Method](https://www.w3schools.com/jsref/met_element_removeattribute.asp)
+
+[CSS Opacity](https://www.w3schools.com/css/css_image_transparency.asp)
+
+[CSS z-index Property](https://www.w3schools.com/cssref/pr_pos_z-index.php)
+
