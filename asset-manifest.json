@@ -1,19 +1,25 @@
 {
   "files": {
-    "main.css": "/annas-bday-sticker-book/static/css/main.b6fc9e5d.css",
-    "main.js": "/annas-bday-sticker-book/static/js/main.b9f3aebb.js",
+    "main.css": "/annas-bday-sticker-book/static/css/main.da60a11a.css",
+    "main.js": "/annas-bday-sticker-book/static/js/main.2603d3f0.js",
     "static/js/453.94509467.chunk.js": "/annas-bday-sticker-book/static/js/453.94509467.chunk.js",
     "static/media/Sticker-Book-Pages.png": "/annas-bday-sticker-book/static/media/Sticker-Book-Pages.9494da0fd101310bd934.png",
+    "static/media/Butter.png": "/annas-bday-sticker-book/static/media/Butter.54e8049d931e867e14a6.png",
     "static/media/ShadowSnorlaxPlaced.png": "/annas-bday-sticker-book/static/media/ShadowSnorlaxPlaced.f27f6e4851c87080aad8.png",
     "static/media/ShadowSnorlax.png": "/annas-bday-sticker-book/static/media/ShadowSnorlax.2146f8aadf5f9083203d.png",
+    "static/media/MandarinDuckPlaced.png": "/annas-bday-sticker-book/static/media/MandarinDuckPlaced.bf1e755cdb3126b3ef07.png",
+    "static/media/MandarinDuck.png": "/annas-bday-sticker-book/static/media/MandarinDuck.eeba9c97f5de726eebdb.png",
+    "static/media/Present.png": "/annas-bday-sticker-book/static/media/Present.d5044eecd4c8eb389e5b.png",
+    "static/media/MasterballDetailed.png": "/annas-bday-sticker-book/static/media/MasterballDetailed.43e77161b1b84f5e75fa.png",
     "static/media/ShadowSnorlaxPlaceholder.png": "/annas-bday-sticker-book/static/media/ShadowSnorlaxPlaceholder.e25620d7eaab86c30a2d.png",
+    "static/media/MandarinDuckPlaceholder.png": "/annas-bday-sticker-book/static/media/MandarinDuckPlaceholder.1c7d6868903144107489.png",
     "index.html": "/annas-bday-sticker-book/index.html",
-    "main.b6fc9e5d.css.map": "/annas-bday-sticker-book/static/css/main.b6fc9e5d.css.map",
-    "main.b9f3aebb.js.map": "/annas-bday-sticker-book/static/js/main.b9f3aebb.js.map",
+    "main.da60a11a.css.map": "/annas-bday-sticker-book/static/css/main.da60a11a.css.map",
+    "main.2603d3f0.js.map": "/annas-bday-sticker-book/static/js/main.2603d3f0.js.map",
     "453.94509467.chunk.js.map": "/annas-bday-sticker-book/static/js/453.94509467.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6fc9e5d.css",
-    "static/js/main.b9f3aebb.js"
+    "static/css/main.da60a11a.css",
+    "static/js/main.2603d3f0.js"
   ]
 }
