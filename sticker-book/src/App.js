@@ -13,7 +13,8 @@ function App() {
   // This will be used to supply the files with the sticker names; also can be used for local storage keys for each sticker
   const [stickerNames, setStickerNames] = useState({
     testRectangle: "testRectangle",
-    shadowSnorlax: "shadowSnorlax"
+    shadowSnorlax: "shadowSnorlax",
+    mandarinDuck: "mandarinDuck"
   });
 
   function initializeLocalStorage() {
@@ -60,14 +61,22 @@ function App() {
   
   useEffect(() => {
     window.addEventListener("Local Storage Cleared!", function(){ reRenderWebsite(); });
+
     window.addEventListener("Shadow Snorlax Present Opened!", function(){ reRenderWebsite(); });
     window.addEventListener("Shadow Snorlax Present Spoiler Closed!", function(){ reRenderWebsite(); });
+
+    window.addEventListener("Mandarin Duck Present Spoiler Closed!", function(){ reRenderWebsite(); });
+    window.addEventListener("Mandarin Duck Present Spoiler Closed!", function(){ reRenderWebsite(); });
     
     // Not sure if this is needed, but preciousorigho.com says this might help with performance?
     return () => {
       window.removeEventListener("Local Storage Cleared!", function(){ reRenderWebsite(); });
+
       window.removeEventListener("Shadow Snorlax Present Opened!", function(){ reRenderWebsite(); });
       window.removeEventListener("Shadow Snorlax Present Spoiler Closed!", function(){ reRenderWebsite(); });
+
+      window.removeEventListener("Mandarin Duck Present Spoiler Closed!", function(){ reRenderWebsite(); });
+      window.removeEventListener("Mandarin Duck Present Spoiler Closed!", function(){ reRenderWebsite(); });
     };
   }, []);
 
@@ -88,7 +97,7 @@ function App() {
 
         {/* X: {x}
         Y: {y} */}
-        Shadow Snorlax Placed?!?!?!? (DEBUG POV?!?!?!): {localStorage.getItem("shadowSnorlaxPlaced")}
+        {/*Shadow Snorlax Placed?!?!?!? (DEBUG POV?!?!?!): {localStorage.getItem("shadowSnorlaxPlaced")}*/}
 
         <Sidebar stickerNames={stickerNames} />
         <SidebarButton />

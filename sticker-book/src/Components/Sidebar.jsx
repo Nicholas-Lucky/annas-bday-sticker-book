@@ -2,10 +2,12 @@ import './Sidebar.css';
 import { TestRectangle } from './Stickers/TestRectangle.jsx';
 import { ShadowSnorlax } from './Stickers/ShadowSnorlax.jsx';
 import { Sticker } from './Stickers/Sticker.jsx';
+
 import snorlax from './Stickers/ShadowSnorlax.png';
+import mandarinDuck from './Stickers/MandarinDuck.png';
 
 function Sidebar({ stickerNames }) {
-  let stickerImages = [snorlax];
+  let stickerImages = [snorlax, mandarinDuck];
 
   function toggleSidebar(state) {
     // console.log("called");
