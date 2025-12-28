@@ -97,3 +97,4 @@
 
 [CSS z-index Property](https://www.w3schools.com/cssref/pr_pos_z-index.php)
 
+[Favicon Generator / Generate from Image](https://favicon.io/favicon-converter/)
