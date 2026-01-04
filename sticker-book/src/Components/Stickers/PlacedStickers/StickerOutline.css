@@ -1,0 +1,26 @@
+:root {
+    --shadow-snorlax-placed-width: 350px;
+    --mandarin-duck-sticker-width: 350px;
+}
+
+.UnplacedSticker:hover {
+    cursor: help;
+}
+
+.shadowSnorlaxOnStickerBook {
+    width: var(--shadow-snorlax-placed-width);
+
+    position: absolute;
+    /* for some reason the sticker is already horizontally centered without needing this left attribute?? */
+    left: 8%;
+    top: 11%;
+}
+
+.mandarinDuckOnStickerBook {
+    width: var(--mandarin-duck-sticker-width);
+
+    position: absolute;
+    /* for some reason the sticker is already horizontally centered without needing this left attribute?? */
+    left: 57%;
+    top: 29%;
+}
